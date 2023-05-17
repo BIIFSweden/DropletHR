@@ -13,5 +13,5 @@ fi
 
 for rawfile in "${basedir}"/raw/*.vsi; do
     filename=$(basename "$rawfile")
-    bfconvert -bigtiff -compression LZW -overwrite "${rawfile}" "${basedir}/img/${filename%.vsi}.tiff"
+    bfconvert -nobigtiff -compression LZW -series 0 -overwrite "${rawfile}" "${basedir}/img/${filename%.vsi}.tiff"
 done
