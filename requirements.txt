@@ -1,6 +1,8 @@
 imagecodecs
+ipympl
 matplotlib
 numpy
+pandas
 scikit-image
 tifffile
 tqdm
