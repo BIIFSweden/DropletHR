@@ -7,4 +7,12 @@ dependencies:
   - python
   - jupyterlab
   - pip:
-    - -r requirements.txt
+    - imagecodecs
+    - ipympl
+    - matplotlib
+    - numpy
+    - opencv-python-headless
+    - pandas
+    - scikit-image
+    - tifffile
+    - tqdm
