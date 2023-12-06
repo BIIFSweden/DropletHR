@@ -1,21 +1,19 @@
 import numpy as np
-from skimage.draw import circle_perimeter
 from skimage.transform import hough_circle, hough_circle_peaks
 
 
 def get_droplets(
     edges_t, hough_min_radius, hough_max_radius, hough_radius_step, hough_min_distance
 ):
-    radii = np.arange(hough_min_radius, hough_max_radius + 1e-3, hough_radius_step)
-    # do not normalize by radius to favor larger circles
-    h = hough_circle(edges_t, radii, normalize=False)
+    r = np.arange(hough_min_radius, hough_max_radius + 1e-3, hough_radius_step)
+    # larger circles are preferrable (outer perimeter) --> ideally, set normalize=False
+    # however, this can lead to wrong results in dense areas --> normalize by perimeter
+    h = hough_circle(edges_t, r, normalize=True)
     accums, cxs, cys, radii = hough_circle_peaks(
         h,
-        radii,
+        r,
         min_xdistance=int(((hough_min_distance**2) / 2) ** 0.5),
         min_ydistance=int(((hough_min_distance**2) / 2) ** 0.5),
-        normalize=False,  # still, do not normalize...
+        normalize=False,  # data has been normalized already...
     )
-    # manually normalize by circle perimeter pixel counts now...
-    accums /= np.array([circle_perimeter(0, 0, int(r))[0].size for r in radii])
     return np.column_stack((accums, cxs, cys, radii))
