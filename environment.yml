@@ -1,4 +1,4 @@
-name: droplet_microfluidics
+name: droplet-hr
 channels:
   - conda-forge
   - defaults
@@ -9,10 +9,12 @@ dependencies:
   - pip:
     - imagecodecs
     - ipympl
+    - ipywidgets  # required for tqdm
     - matplotlib
     - numpy
     - opencv-python-headless
     - pandas
     - scikit-image
+    - scipy
     - tifffile
     - tqdm

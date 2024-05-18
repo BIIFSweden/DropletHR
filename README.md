@@ -1,4 +1,4 @@
-# DanAndersson2023-1 Droplet Microfluidics
+# DropletHR
 
 Droplet Microfluidics for detection of bacterial heteroresistance
 
@@ -6,9 +6,9 @@ Droplet Microfluidics for detection of bacterial heteroresistance
 
 Install the [conda](https://conda.io) package, dependency and environment manager.
 
-Then create the `droplet_microfluidics` conda environment:
+Then create the `droplet-hr` conda environment:
 
-    cd <path to your 'DanAndersson2023-1' directory>
+    cd <path to your 'DropletHR' directory>
     conda env create -f environment.yml
 
 This will install all necessary project dependencies.
@@ -17,17 +17,17 @@ This will install all necessary project dependencies.
 
 Copy all project data to the [data](data) directory (or use symbolic links).
 
-Then run [Jupyter Lab](https://jupyter.org) from within the `droplet_microfluidics` conda environment:
+Then run [Jupyter Lab](https://jupyter.org) from within the `droplet-hr` conda environment:
 
-    cd <path to your 'DanAndersson2023-1' directory>
-    conda activate droplet_microfluidics
+    cd <path to your 'DropletHR' directory>
+    conda activate droplet-hr
     jupyter-lab
 
 All analysis notebooks can be found in the [notebooks](notebooks) directory.
 
 ## Support
 
-If you find a bug, please [raise an issue](https://github.com/BIIFSweden/DanAndersson2023-1/issues/new).
+If you find a bug, please [raise an issue](https://github.com/BIIFSweden/DropletHR/issues/new).
 
 ## Contributing
 
